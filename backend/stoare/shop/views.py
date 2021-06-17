@@ -6,8 +6,8 @@ from rest_framework import generics
 from shop.models import Shop
 from stoare.pagination import LargeResultsSetPagination
 
-class ShopList(generics.ListCreateAPIView):
-    queryset = Shop.objects.filter(is_active=True)
+class ShopList(generics.ListAPIView):
+    queryset = Shop.objects.filter(is_active=True).order_by("id")
     serializer_class = ShopSerializer
     pagination_class = LargeResultsSetPagination
 
