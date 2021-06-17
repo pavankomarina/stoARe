@@ -8,12 +8,12 @@ from stoare.pagination import LargeResultsSetPagination
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 
-class ProductList(generics.ListCreateAPIView):
-    queryset = Product.objects.filter(available=True)
+class ProductList(generics.ListAPIView):
+    queryset = Product.objects.filter(available=True).order_by("id")
     serializer_class = ProductSerializer
     pagination_class = LargeResultsSetPagination
 
-class ProductDetail(generics.ListCreateAPIView):
+class ProductDetail(generics.ListAPIView):
     queryset = Product.objects.filter(available=True)
     serializer_class = ProductSerializer
     pagination_class = LargeResultsSetPagination
