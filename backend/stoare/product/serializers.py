@@ -13,4 +13,4 @@ class ProductSerializer(serializers.ModelSerializer):
         request = self.context.get("request")
         if not obj.image:
             return ""
-        return f"{request.scheme}:{request.META.get('HTTP_HOST')}{settings.MEDIA_URL}{obj.image.image}"
+        return f"{request.scheme}://{request.META.get('HTTP_HOST')}{settings.MEDIA_URL}{obj.image.image}"
