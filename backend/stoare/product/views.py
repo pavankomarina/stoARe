@@ -20,5 +20,5 @@ class ProductDetail(generics.ListAPIView):
 
     def get(self, request, product_id):
         product = get_object_or_404(Product, pk=product_id)
-        data = ProductSerializer(product).data
+        data = ProductSerializer(product, context={"request":self.request}).data
         return Response(data)
