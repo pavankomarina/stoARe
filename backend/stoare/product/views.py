@@ -1,6 +1,8 @@
+from django.db.models import query
 from django.shortcuts import render
 
 # Create your views here.
+from django_filters.rest_framework import DjangoFilterBackend
 from product.serializers import ProductSerializer
 from rest_framework import generics
 from product.models import Product
@@ -12,6 +14,8 @@ class ProductList(generics.ListAPIView):
     queryset = Product.objects.filter(available=True).order_by("id")
     serializer_class = ProductSerializer
     pagination_class = LargeResultsSetPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['shop_id']
 
 class ProductDetail(generics.ListAPIView):
     queryset = Product.objects.filter(available=True)
@@ -20,5 +24,5 @@ class ProductDetail(generics.ListAPIView):
 
     def get(self, request, product_id):
         product = get_object_or_404(Product, pk=product_id)
-        data = ProductSerializer(product).data
+        data = ProductSerializer(product, context={"request":self.request}).data
         return Response(data)
