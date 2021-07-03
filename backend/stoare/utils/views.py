@@ -22,6 +22,10 @@ class SendMessage(APIView):
             data = request.data
             message_type = data.get("message_type")
             shop_id = data.get("shop_id")
+            if not message_type:
+                return Response({"details": "Message ID required"}, status=status.HTTP_400_BAD_REQUEST)
+            if not shop_id:
+                return Response({"details": "Shop ID required"}, status=status.HTTP_400_BAD_REQUEST)
             shop : Shop = Shop.objects.get(pk=shop_id, is_active=True)
 
             # send sms
