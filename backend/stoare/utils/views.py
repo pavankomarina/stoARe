@@ -8,8 +8,11 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from shop.models import Shop
+from rest_framework.generics import GenericAPIView
+from utils.serializers import MessageSerializer
 
-class SendMessage(APIView):
+class SendMessage(GenericAPIView):
+    serializer_class = MessageSerializer
 
     def post(self, request, format=None):
         """
