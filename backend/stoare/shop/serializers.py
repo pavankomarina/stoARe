@@ -7,7 +7,7 @@ class ShopSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Shop
-        fields = ["name", "address", "phone", "email", "rating", "owner_name", "description", "license", "image"]
+        fields = ["id", "name", "address", "phone", "email", "rating", "owner_name", "description", "license", "image"]
 
     def get_image(self, obj):
         request = self.context.get("request")

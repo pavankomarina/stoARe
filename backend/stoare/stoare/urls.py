@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("shops/", include("shop.urls")),
     path("products/", include("product.urls")),
+    path("utils/", include("utils.urls")),
     url(r'^$', schema_view),
 ]
 
