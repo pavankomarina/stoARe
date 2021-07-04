@@ -9,5 +9,5 @@ from stoare.pagination import LargeResultsSetPagination
 class ShopList(generics.ListAPIView):
     queryset = Shop.objects.filter(is_active=True).order_by("id")
     serializer_class = ShopSerializer
-    # pagination_class = LargeResultsSetPagination
+    pagination_class = LargeResultsSetPagination
 
