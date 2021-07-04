@@ -13,14 +13,14 @@ from rest_framework.response import Response
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.filter(available=True).order_by("id")
     serializer_class = ProductSerializer
-    pagination_class = LargeResultsSetPagination
+    # pagination_class = LargeResultsSetPagination
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['shop_id']
 
 class ProductDetail(generics.ListAPIView):
     queryset = Product.objects.filter(available=True)
     serializer_class = ProductSerializer
-    pagination_class = LargeResultsSetPagination
+    # pagination_class = LargeResultsSetPagination
 
     def get(self, request, product_id):
         product = get_object_or_404(Product, pk=product_id)
