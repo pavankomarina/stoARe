@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django_filters.rest_framework import DjangoFilterBackend
-from product.serializers import ProductSerializer
+from product.serializers import ProductSerializer, ProductDetailSerializer
 from rest_framework import generics
 from product.models import Product
 from stoare.pagination import LargeResultsSetPagination
@@ -19,10 +19,10 @@ class ProductList(generics.ListAPIView):
 
 class ProductDetail(generics.ListAPIView):
     queryset = Product.objects.filter(available=True)
-    serializer_class = ProductSerializer
+    serializer_class = ProductDetailSerializer
     pagination_class = LargeResultsSetPagination
 
     def get(self, request, product_id):
         product = get_object_or_404(Product, pk=product_id)
-        data = ProductSerializer(product, context={"request":self.request}).data
+        data = ProductDetailSerializer(product, context={"request":self.request}).data
         return Response(data)
