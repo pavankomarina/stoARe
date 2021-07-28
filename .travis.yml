@@ -9,6 +9,7 @@ services:
 install:
     - pip install -r backend/requirements.txt
 before_script:
+    - touch backend/stoare/stoare/local_settings.py
     - mysql -e 'create database test;' -u root
 script:
     -  python backend/stoare/manage.py test
