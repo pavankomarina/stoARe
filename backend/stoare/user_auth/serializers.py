@@ -51,5 +51,4 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
         refresh = self.get_token(self.user)
-        data['access_token'] = str(refresh.access_token)
         return data
