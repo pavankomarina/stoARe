@@ -7,8 +7,8 @@ env:
 services:
    - mysql
 install:
-    - pip install -r requirements.txt
+    - pip install -r backend/requirements.txt
 before_script:
     - mysql -e 'create database test;' -u root
 script:
-    -  python manage.py test
+    -  python backend/stoare/manage.py test
