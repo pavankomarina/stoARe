@@ -9,6 +9,7 @@ class Product(models.Model):
     rating = models.FloatField()
     available = models.BooleanField(default=True)
     image = models.ForeignKey(Image, related_name='product_images', on_delete=models.CASCADE, null=True)
+    related_images = models.ManyToManyField(Image, related_name="detailed_images", blank=True)
 
 
     def __str__(self):
