@@ -1,13 +1,14 @@
 language: python
+
 python:
-  - "3.6"
-services:
-  - mysql
+    - "3.6"
 env:
-  -DJANGO=3.2 DB=mysql
+    - SECRET_KEY='TEST'
+services:
+   - mysql
 install:
-  - pip install -r requirements.txt
+    - pip install -r requirements.txt
 before_script:
-  - mysql -e 'create database test;' -u root
+    - mysql -e 'create database test;' -u root
 script:
-  - python manage.py test
+    -  python manage.py test
