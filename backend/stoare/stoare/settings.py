@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'user_auth',
     'django_email_verification',
     'rest_framework.authtoken',
-
+    'orders',
 ]
 
 MIDDLEWARE = [
