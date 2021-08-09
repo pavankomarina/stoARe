@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from django_email_verification import urls as email_urls
 from rest_framework_swagger.views import get_swagger_view
 
-schema_view = get_swagger_view(title='Pastebin API')
+schema_view = get_swagger_view(title='stoARe API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +29,7 @@ urlpatterns = [
     path("products/", include("product.urls")),
     path("utils/", include("utils.urls")),
     path("auth/", include("user_auth.urls")),
+    path("order/", include("orders.urls")),
     path('email/', include(email_urls)),
     url(r'^$', schema_view),
 ]
