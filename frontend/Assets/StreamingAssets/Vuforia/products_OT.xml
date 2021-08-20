@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="QCAR_Dataset_config.xsd">
+  <Tracking>
+    <ObjectTarget name="watch" />
+    <ObjectTarget name="doll" />
+    <ObjectTarget name="remote" />
+    <ObjectTarget name="tableclock" />
+    <ObjectTarget name="toy" />
+    <ObjectTarget name="ganeshmurti" />
+    <ObjectTarget name="toyphone" />
+    <ObjectTarget name="boxheadphone" />
+    <ObjectTarget name="harddrive" />
+    <ObjectTarget name="boyamic" />
+    <ObjectTarget name="WheelsBook" />
+    <ObjectTarget name="WordPowerBook" />
+    <ObjectTarget name="TheShivaBook" />
+    <ObjectTarget name="Helicopter" />
+    <ObjectTarget name="Papad" />
+    <ObjectTarget name="masala" />
+    <ObjectTarget name="Maggi" />
+    <ObjectTarget name="Tea" />
+    <ObjectTarget name="Coffee" />
+  </Tracking>
+</QCARConfig>
