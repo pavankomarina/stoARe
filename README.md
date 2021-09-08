@@ -1,5 +1,7 @@
 # stoARe
 AR based online shopping platform
-Frontend: Unity
-Backend : Django
-Database : Mysql
+
+## Stack
+- Frontend: Unity
+- Backend : Django
+- Database : Mysql
